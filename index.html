@@ -3,36 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiorenzaCoin (FZAC) - The Future of Renaissance Crypto</title>
+    <title>FiorenzaCoin (FZAC) - The Future of DeFi</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <body>
+    <header>
+        <div class="logo">
+            <img src="assets/fiorenzacoin-logo.png" alt="FiorenzaCoin">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#buy">How to Buy</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
-    <div class="hero">
-        <img src="assets/200FIORENZA.png" class="logo" alt="FiorenzaCoin Logo">
+    <section id="home" class="hero">
         <h1>🚀 FiorenzaCoin (FZAC) 🚀</h1>
         <p>The Most Advanced Decentralized Cryptocurrency with Renaissance Legacy</p>
         <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x6EeFCF57A5161a8dfD850B6f6E7709218e0aA75e">
             Buy $FZAC on PancakeSwap
         </a>
-    </div>
+    </section>
 
     <!-- Live Price Chart -->
-    <h2>📈 FiorenzaCoin Live Price</h2>
-    <canvas id="priceChart" width="400" height="200"></canvas>
+    <section id="tokenomics">
+        <h2>📈 Live Price</h2>
+        <canvas id="priceChart" width="400" height="200"></canvas>
+    </section>
 
-    <!-- NFT Collection Section -->
-    <h2>🎨 Featured NFTs</h2>
-    <div class="nft-gallery">
-        <img src="assets/D97FD332-BB98-48FE-84A7-BCE3D89BEFAC.png" class="nft" alt="NFT 1">
-        <img src="assets/F2325863-658F-4B48-B57E-11E7B7384C55.png" class="nft" alt="NFT 2">
-        <img src="assets/Firefly20250221172620.png" class="nft" alt="NFT 3">
-    </div>
-</body>
+    <!-- How to Buy Section -->
+    <section id="buy">
+        <h2>How to Buy $FZAC</h2>
+        <div class="buy-steps">
+            <div class="step">
+                <img src="assets/step1.png" alt="Step 1">
+                <p>Set up a Wallet (MetaMask, Trust Wallet)</p>
+            </div>
+            <div class="step">
+                <img src="assets/step2.png" alt="Step 2">
+                <p>Go to PancakeSwap & Connect Wallet</p>
+            </div>
+            <div class="step">
+                <img src="assets/step3.png" alt="Step 3">
+                <p>Swap BNB for $FZAC</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Fetch Live Price Data -->
     <script>
         async function fetchPriceData() {
             const response = await fetch("https://api.coingecko.com/api/v3/coins/fiorenzacoin/market_chart?vs_currency=usd&days=7&interval=daily");
@@ -62,5 +87,6 @@
         }
         fetchPriceData();
     </script>
+
 </body>
 </html>
