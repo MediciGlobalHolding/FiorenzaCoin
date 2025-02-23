@@ -1,228 +1,138 @@
-/* General Styles */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+  --gold: #FFD700;
+  --dark-bg: #0D0D0D;
+  --light-text: #E5E5E5;
+  --glow: rgba(255, 215, 0, 0.7);
+  --font-main: 'Playfair Display', serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
 body {
-    background: url('assets/Firefly20250221172620.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  font-family: var(--font-secondary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: rgba(20, 20, 20, 0.85);
-    border-bottom: 4px solid gold;
-    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Header Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 15px var(--gold);
 }
 
-.logo {
-    width: 80px;
-    height: 80px;
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
+nav ul li {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.navbar ul li {
-    display: inline;
+nav ul li a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: gold;
-    transition: 0.3s ease-in-out;
-}
-
-.navbar ul li a:hover {
-    color: #ffcc00;
-    text-shadow: 0px 0px 10px gold;
+nav ul li a:hover {
+  text-shadow: 0px 0px 10px var(--glow);
 }
 
 /* Hero Section */
-.hero {
-    text-align: center;
-    padding: 150px 20px;
-    background: rgba(10, 10, 10, 0.75);
-    border-bottom: 4px solid gold;
-    position: relative;
+header {
+  position: relative;
+  height: 100vh;
+  background: url('/assets/Firefly.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 }
 
-/* Coin Action Element */
-.coin-action {
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 160px;
-    background: url('assets/F2325863-658F-4B48-B57E-11E7B7384C55.png') no-repeat center;
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
-    animation: floatCoin 3s ease-in-out infinite;
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-/* Floating Effect */
-@keyframes floatCoin {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-15px);
-    }
+header h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0px 0px 20px var(--glow);
+  position: relative;
+  z-index: 2;
 }
 
-.glow-text {
-    font-size: 50px;
-    font-weight: bold;
-    color: gold;
-    text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.9);
+header p {
+  font-size: 20px;
+  color: var(--light-text);
+  position: relative;
+  z-index: 2;
 }
 
-.hero p {
-    font-size: 22px;
-    color: #ddd;
-    margin-top: 10px;
+/* Buttons */
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border: 2px solid var(--gold);
+  background: var(--gold);
+  color: #000;
+  transition: 0.3s;
 }
 
-/* Premium Buttons */
-.buttons {
-    margin-top: 30px;
+button:hover {
+  background: transparent;
+  color: var(--gold);
+  text-shadow: 0px 0px 10px var(--glow);
 }
 
-.btn {
-    display: inline-block;
-    padding: 16px 32px;
-    margin: 10px;
-    border-radius: 12px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.4);
-    transition: 0.3s ease-in-out;
+/* Floating Coin */
+.floating-coin {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  animation: float 3s infinite ease-in-out;
+  z-index: 2;
 }
 
-.primary {
-    background: linear-gradient(145deg, #ffcc00, #ffd700);
-    color: black;
-    box-shadow: 0px 5px 20px rgba(255, 215, 0, 0.6);
-}
-
-.primary:hover {
-    background: linear-gradient(145deg, #ffd700, #ffcc00);
-    box-shadow: 0px 5px 25px rgba(255, 215, 0, 0.9);
-}
-
-.secondary {
-    border: 3px solid gold;
-    color: gold;
-    background: none;
-}
-
-.secondary:hover {
-    background: gold;
-    color: black;
-}
-
-/* Market Data Section */
-.market-data {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 50px;
-    border-radius: 15px;
-    margin: 50px auto;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.6);
-    border: 2px solid gold;
-}
-
-.market-data h2 {
-    font-size: 30px;
-    color: gold;
-    margin-bottom: 20px;
-}
-
-.market-data p {
-    font-size: 22px;
-    color: white;
-    margin: 15px 0;
-}
-
-#price-container {
-    font-size: 40px;
-    font-weight: bold;
-    color: gold;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 1);
-}
-
-/* Tokenomics Section */
-.tokenomics {
-    text-align: center;
-    padding: 80px 20px;
-    background: rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.6);
-    border-top: 4px solid gold;
-}
-
-.tokenomics h2 {
-    font-size: 32px;
-    color: gold;
-    margin-bottom: 20px;
-}
-
-.tokenomics p {
-    font-size: 22px;
-    color: white;
-    margin: 15px 0;
-}
-
-/* Roadmap Section */
-.roadmap {
-    text-align: center;
-    padding: 80px 20px;
-    background: rgba(20, 20, 20, 0.85);
-    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.6);
-    border-top: 4px solid gold;
-}
-
-.roadmap h2 {
-    font-size: 32px;
-    color: gold;
-    margin-bottom: 20px;
-}
-
-.roadmap ul {
-    list-style: none;
-    padding: 0;
-}
-
-.roadmap ul li {
-    font-size: 22px;
-    color: white;
-    margin: 15px 0;
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px) scale(1.05);
+  }
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    font-size: 16px;
-    color: #bbb;
-    border-top: 4px solid gold;
-    box-shadow: 0px -4px 10px rgba(255, 215, 0, 0.5);
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--gold);
+  font-size: 14px;
 }
