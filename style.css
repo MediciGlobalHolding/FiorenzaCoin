@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Orbitron:wght@400;700&display=swap');
 
 body {
-    background: url('YOUR-RENAISSANCE-IMAGE-URL') no-repeat center center/cover;
+    background: url('assets/fiorenza-background.jpg') no-repeat center center/cover;
     font-family: 'Playfair Display', serif;
     color: white;
     text-align: center;
@@ -28,8 +28,7 @@ p {
 
 .logo {
     width: 200px;
-    height: 200px;
-    background: url('https://cvws.icloud-content.com/B/AdY5_yVxDgOsNj4Pi5_Otqx_oudpAYHD6NORvVilPR7WULVBHiRGaUyO/200FIORENZA.png?o=AmVJALlA1IgmUxnSkKN1P-i-sC6aF6WzsKwm2uJLPZLS&v=1&x=3&a=CAogoSrAK4YP6omTjE0ptzw4fX_POvZEBhtVB1zGfwsupWsSbxDtuZia0zIY7Zb0m9MyIgEAUgR_oudpWgRGaUyOaieZKgOHOnXDgvCfKOxrue5RPZYLWYZoJyAX-m3iNDWbY5hbj2G0htNyJ-xw2-e2RpAKjO5LcvFcNxwJ1Odk2OfCys73OYPybp8LSi2KI_FHUg&e=1740325587&fl=&r=f9a18c77-d515-4f1a-bf97-03620d38df7d-1&k=kjuHeM6VyXuOaYLMwlPqnA&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=114&s=1QhOinNcSJXLCm_Rdy-ZuFjAbp0&cd=i') no-repeat center center/contain;
+    height: auto;
 }
 
 .btn {
@@ -44,4 +43,23 @@ p {
 .btn:hover {
     background: linear-gradient(90deg, silver, gold);
     box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
+.nft-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nft {
+    width: 150px;
+    height: auto;
+    border: 2px solid gold;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.nft:hover {
+    transform: scale(1.1);
 }
