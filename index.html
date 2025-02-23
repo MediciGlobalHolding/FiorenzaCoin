@@ -3,17 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiorenzaCoin (FZAC) - Official Website</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; background-color: #1a1a1a; color: #fff; }
-        h1 { color: darkred; }
-        p { color: lightgray; }
-        .btn { background: gold; padding: 10px 20px; border-radius: 5px; text-decoration: none; color: black; }
-    </style>
+    <title>FiorenzaCoin (FZAC) - Renaissance Crypto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Welcome to FiorenzaCoin (FZAC)</h1>
-    <p>The next evolution of DeFi is here.</p>
-    <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x6EeFCF57A5161a8dfD850B6f6E7709218e0aA75e">Buy $FZAC on PancakeSwap</a>
+    <div class="hero">
+        <div class="logo"></div>
+        <h1>🚀 FiorenzaCoin (FZAC) 🚀</h1>
+        <p>The Most Advanced Decentralized Cryptocurrency with Renaissance Legacy</p>
+
+        <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x6EeFCF57A5161a8dfD850B6f6E7709218e0aA75e">
+            Buy $FZAC on PancakeSwap
+        </a>
+    </div>
+
+    <h2>Live Price & Historical Data</h2>
+    <canvas id="priceChart" width="400" height="200"></canvas>
+
+    <script>
+        async function fetchPriceData() {
+            const response = await fetch("https://api.coingecko.com/api/v3/coins/fiorenzacoin/market_chart?vs_currency=usd&days=7&interval=daily");
+            const data = await response.json();
+
+            const labels = data.prices.map(item => {
+                let date = new Date(item[0]);
+                return date.toLocaleDateString();
+            });
+
+            const prices = data.prices.map(item => item[1]);
+
+            const ctx = document.getElementById("priceChart").getContext("2d");
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "FZAC Price (USD)",
+                        data: prices,
+                        borderColor: "gold",
+                        backgroundColor: "rgba(255, 215, 0, 0.2)",
+                        borderWidth: 2
+                    }]
+                }
+            });
+        }
+        fetchPriceData();
+    </script>
 </body>
 </html>
