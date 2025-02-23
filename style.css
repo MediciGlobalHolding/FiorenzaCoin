@@ -1,39 +1,36 @@
-/* ==========================
-   🌟 FiorenzaCoin (FZAC) Style
-   ========================== */
-
-/* Global Styles */
+/* General Styles */
 body {
+    background: #0d0d0d;
+    color: #fff;
     font-family: "Poppins", sans-serif;
-    background-color: #000;
-    color: white;
-    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* NAVIGATION BAR */
+/* Navigation Bar */
 .navbar {
-    background-color: #111;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+    padding: 20px 40px;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: gold;
+.logo {
+    width: 60px;
+    height: 60px;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 15px;
-    margin: 0;
+    gap: 30px;
     padding: 0;
+    margin: 0;
 }
 
 .navbar ul li {
@@ -41,121 +38,160 @@ body {
 }
 
 .navbar ul li a {
-    color: gold;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    padding: 8px 15px;
-    transition: all 0.3s ease-in-out;
+    color: gold;
+    transition: 0.3s ease-in-out;
 }
 
 .navbar ul li a:hover {
-    color: black;
-    background: gold;
-    border-radius: 5px;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px gold;
 }
 
-/* HERO SECTION */
+/* Hero Section */
 .hero {
-    padding: 100px 20px;
-    background: linear-gradient(to right, #111, #222);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    position: relative;
+    text-align: center;
+    padding: 150px 20px;
+    background: linear-gradient(180deg, #222, #000);
+    background-image: url('assets/bg-renaissance.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.3);
 }
 
-/* Glowing Text Effect */
-.hero h1 {
+.glow-text {
     font-size: 48px;
     font-weight: bold;
     color: gold;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
-    animation: glow 1.5s infinite alternate;
+    text-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
 }
 
-/* Subtitle */
 .hero p {
     font-size: 20px;
-    color: #bbb;
-    max-width: 600px;
+    color: #ddd;
     margin-top: 10px;
 }
 
-/* BUTTON STYLES */
 .buttons {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 14px 28px;
+    margin: 10px;
     border-radius: 8px;
     font-size: 20px;
     font-weight: bold;
-    margin: 10px;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    border: none;
+    transition: 0.3s ease-in-out;
 }
 
-/* Primary Button (Gold) */
 .primary {
-    background: linear-gradient(to right, #ffcc00, #ff9900);
+    background: gold;
     color: black;
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+    box-shadow: 0px 0px 15px gold;
 }
 
 .primary:hover {
     background: #ffcc00;
-    transform: scale(1.1);
+    box-shadow: 0px 0px 25px gold;
 }
 
-/* Secondary Button (Outlined) */
 .secondary {
     border: 2px solid gold;
     color: gold;
-    background: transparent;
 }
 
 .secondary:hover {
     background: gold;
     color: black;
-    transform: scale(1.1);
 }
 
-/* FOOTER */
+/* Market Data Section */
+.market-data {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 50px;
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+}
+
+.market-data h2 {
+    font-size: 30px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.market-data p {
+    font-size: 22px;
+    color: white;
+    margin: 15px 0;
+}
+
+#price-container {
+    font-size: 40px;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 1);
+}
+
+/* Tokenomics Section */
+.tokenomics {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #000, #222);
+    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.tokenomics h2 {
+    font-size: 30px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.tokenomics p {
+    font-size: 22px;
+    color: white;
+    margin: 15px 0;
+}
+
+/* Roadmap Section */
+.roadmap {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.roadmap h2 {
+    font-size: 30px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.roadmap ul {
+    list-style: none;
+    padding: 0;
+}
+
+.roadmap ul li {
+    font-size: 22px;
+    color: white;
+    margin: 15px 0;
+}
+
+/* Footer */
 footer {
-    background: #111;
+    text-align: center;
     padding: 20px;
-    margin-top: 30px;
-    color: gray;
-    font-size: 14px;
-}
-
-/* ==========================
-   🌟 ANIMATIONS 
-   ========================== */
-
-/* Glowing Text Animation */
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8);
-    }
-}
-
-/* Smooth Button Hover */
-@keyframes button-hover {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
+    background: #111;
+    font-size: 16px;
+    color: #bbb;
+    box-shadow: 0px -4px 10px rgba(255, 215, 0, 0.3);
 }
