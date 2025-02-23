@@ -1,4 +1,4 @@
-// Fetch Real-Time Market Data from DexScreener
+// Fetch Real-Time Market Data
 async function fetchMarketData() {
     const apiURL = "https://api.dexscreener.com/latest/dex/tokens/0x6EeFCF57A5161a8dfD850B6f6E7709218e0aA75e";
     
@@ -24,29 +24,6 @@ async function fetchMarketData() {
     }
 }
 
-// Fetch Total Supply from BSCScan API
-async function fetchTotalSupply() {
-    const contractAddress = "0x6EeFCF57A5161a8dfD850B6f6E7709218e0aA75e";
-    const apiKey = "YOUR_BSCSCAN_API_KEY"; // Replace with real API key
-    const apiURL = `https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${apiKey}`;
-
-    try {
-        const response = await fetch(apiURL);
-        const data = await response.json();
-        
-        if (data.result) {
-            const totalSupply = parseInt(data.result) / 1e18; // Convert from Wei to FZAC
-            document.getElementById("total-supply").innerText = totalSupply.toLocaleString();
-        } else {
-            document.getElementById("total-supply").innerText = "Unavailable";
-        }
-    } catch (error) {
-        console.error("Error fetching total supply:", error);
-        document.getElementById("total-supply").innerText = "Unavailable";
-    }
-}
-
-// Auto-refresh Data
+// Fetch data every 30 seconds
 setInterval(fetchMarketData, 30000);
 fetchMarketData();
-fetchTotalSupply();
