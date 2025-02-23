@@ -1,97 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+/* ==========================
+   🌟 FiorenzaCoin (FZAC) Style
+   ========================== */
 
+/* Global Styles */
 body {
-    background: url('assets/fiorenza-background.jpg') no-repeat center center/cover;
-    font-family: 'Playfair Display', serif;
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
     color: white;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-header {
+/* NAVIGATION BAR */
+.navbar {
+    background-color: #111;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
 }
 
-nav ul {
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+
+.navbar ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
     color: gold;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
 }
 
-nav a:hover {
-    color: silver;
+.navbar ul li a:hover {
+    color: black;
+    background: gold;
+    border-radius: 5px;
 }
 
+/* HERO SECTION */
 .hero {
-    height: 80vh;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #111, #222);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-shadow: 0px 0px 10px gold;
+    min-height: 80vh;
+    position: relative;
 }
 
-h1 {
-    font-size: 4rem;
+/* Glowing Text Effect */
+.hero h1 {
+    font-size: 48px;
     font-weight: bold;
-    text-shadow: 0px 0px 20px gold;
-    animation: fadeIn 2s ease-in-out;
+    color: gold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+    animation: glow 1.5s infinite alternate;
 }
 
-p {
-    font-size: 1.4rem;
-    opacity: 0.9;
-    animation: fadeIn 3s ease-in-out;
+/* Subtitle */
+.hero p {
+    font-size: 20px;
+    color: #bbb;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+/* BUTTON STYLES */
+.buttons {
+    margin-top: 20px;
 }
 
 .btn {
-    background: linear-gradient(90deg, gold, silver);
-    padding: 15px 25px;
-    border-radius: 10px;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 20px;
     font-weight: bold;
+    margin: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+/* Primary Button (Gold) */
+.primary {
+    background: linear-gradient(to right, #ffcc00, #ff9900);
     color: black;
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
 }
 
-.btn:hover {
-    background: linear-gradient(90deg, silver, gold);
-    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
-}
-
-.buy-steps {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.step {
-    width: 150px;
-    text-align: center;
-}
-
-.step img {
-    width: 100px;
-    height: auto;
-    border: 2px solid gold;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.step:hover img {
+.primary:hover {
+    background: #ffcc00;
     transform: scale(1.1);
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Secondary Button (Outlined) */
+.secondary {
+    border: 2px solid gold;
+    color: gold;
+    background: transparent;
+}
+
+.secondary:hover {
+    background: gold;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    padding: 20px;
+    margin-top: 30px;
+    color: gray;
+    font-size: 14px;
+}
+
+/* ==========================
+   🌟 ANIMATIONS 
+   ========================== */
+
+/* Glowing Text Animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8);
+    }
+}
+
+/* Smooth Button Hover */
+@keyframes button-hover {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
 }
